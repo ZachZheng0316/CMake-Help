@@ -1,4 +1,5 @@
 # add the library that runs
+# 生成动态库文件
 add_library(MathFunctions MathFunctions.cxx)
 
 # state that anybody linking to us needs to include the current source dir
@@ -10,10 +11,11 @@ target_include_directories(MathFunctions
 # should we use our own math functions
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
 if(USE_MYMATH)
-
+  # 定义编译目标所需的宏定义: USE_MYMATH
   target_compile_definitions(MathFunctions PRIVATE "USE_MYMATH")
 
   # first we add the executable that generates the table
+  # 生成可执行文件: MakeTable
   add_executable(MakeTable MakeTable.cxx)
   target_link_libraries(MakeTable PRIVATE tutorial_compiler_flags)
 

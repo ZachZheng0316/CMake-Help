@@ -3,11 +3,14 @@ cmake_minimum_required(VERSION 3.15)
 # set the project name and version
 project(Tutorial VERSION 1.0)
 
+# 构造一个 INTERFACE 目标
 add_library(tutorial_compiler_flags INTERFACE)
+# 指定 C++ 标准级别为 11
 target_compile_features(tutorial_compiler_flags INTERFACE cxx_std_11)
 
 # add compiler warning flags just when building this project via
 # the BUILD_INTERFACE genex
+# 通过 BUILD_INTERFACE 添加编译警告标志
 set(gcc_like_cxx "$<COMPILE_LANG_AND_ID:CXX,ARMClang,AppleClang,Clang,GNU>")
 set(msvc_cxx "$<COMPILE_LANG_AND_ID:CXX,MSVC>")
 target_compile_options(tutorial_compiler_flags INTERFACE
