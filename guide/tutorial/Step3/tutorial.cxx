@@ -17,6 +17,7 @@ int main(int argc, char* argv[])
     std::cout << argv[0] << " Version " << Tutorial_VERSION_MAJOR << "."
               << Tutorial_VERSION_MINOR << std::endl;
     std::cout << "Usage: " << argv[0] << " number" << std::endl;
+	std::system("pause");
     return 1;
   }
 
@@ -32,5 +33,6 @@ int main(int argc, char* argv[])
 
   std::cout << "The square root of " << inputValue << " is " << outputValue
             << std::endl;
+  std::system("pause");
   return 0;
 }

@@ -7,13 +7,13 @@ project(Tutorial VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# 设置可以改变值得变量: USE_MYMATH
+# 设置可选变量: USE_MYMATH
 option(USE_MYMATH "Use tutorial provided math implementation" ON)
 
 # 配置头文件以把版本号传入源码
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
-# 添加 MathFunctions 库
+# 如果选中 USE_MYMATH, 则使用 MathFunctions 库
 if(USE_MYMATH)
   # 添加子目录
   add_subdirectory(MathFunctions)
