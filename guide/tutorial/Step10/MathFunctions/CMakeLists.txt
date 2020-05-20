@@ -24,6 +24,7 @@ if(USE_MYMATH)
     )
 
   # library that just does sqrt
+  # 生成库文件时，为什么需要增加头文件 Table.h
   add_library(SqrtLibrary STATIC
               mysqrt.cxx
               ${CMAKE_CURRENT_BINARY_DIR}/Table.h
