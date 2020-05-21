@@ -22,6 +22,7 @@ int main(int argc, char* argv[])
   }
 
   // convert input to double
+  // 把字符串转化为 double 类型
   const double inputValue = std::stod(argv[1]);
 
   // which square root function should we use?
