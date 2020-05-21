@@ -17,9 +17,9 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 if(USE_MYMATH)
   # 添加子目录
   add_subdirectory(MathFunctions)
-  # 设置库变量
+  # 设置库列表
   list(APPEND EXTRA_LIBS MathFunctions)
-  # 设置头文件目录变量
+  # 设置库的头文件列表
   list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
 endif()
 
@@ -31,8 +31,7 @@ target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS})
 
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
-# 在搜索路径上包含头文件路径
 target_include_directories(Tutorial PUBLIC
-                           "${PROJECT_BINARY_DIR}"
-                           ${EXTRA_INCLUDES}
+                           "${PROJECT_BINARY_DIR}" # TutorialConfig.h 在此目录
+                           ${EXTRA_INCLUDES} # 库头文件在此目录
                            )
