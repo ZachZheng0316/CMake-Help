@@ -36,20 +36,25 @@ target_include_directories(Tutorial PUBLIC
                            )
 
 # add the install targets
-# 添加安装目标
+# 安装可执行文件 和 配置头文件
 install(TARGETS Tutorial DESTINATION bin)
 install(FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
   DESTINATION include
   )
 
 # enable testing
+# 启动测试
 enable_testing()
 
 # does the application run
+# 对可执行文件进行测试
+# NAME Runs: 测试名称
+# COMMAND Tutorial 25: 测试质量
 add_test(NAME Runs COMMAND Tutorial 25)
 
 # does the usage message work?
 add_test(NAME Usage COMMAND Tutorial)
+# 检测测试的结果是否包含字符串 "Usage:.*number"
 set_tests_properties(Usage
   PROPERTIES PASS_REGULAR_EXPRESSION "Usage:.*number"
   )
