@@ -7,5 +7,5 @@ target_include_directories(MathFunctions
           )
 
 # install rules
-install(TARGETS MathFunctions DESTINATION lib)
-install(FILES MathFunctions.h DESTINATION include)
+install(TARGETS MathFunctions DESTINATION lib)     # 安装库文件
+install(FILES MathFunctions.h DESTINATION include) # 安装库文件的头文件 
