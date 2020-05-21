@@ -1,7 +1,9 @@
 # first we add the executable that generates the table
+# 生成可执行文件 MakeTable
 add_executable(MakeTable MakeTable.cxx)
 
 # add the command to generate the source code
+# 执行 MakeTable 生成 Table.h
 add_custom_command(
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Table.h
   COMMAND MakeTable ${CMAKE_CURRENT_BINARY_DIR}/Table.h
@@ -9,6 +11,7 @@ add_custom_command(
   )
 
 # add the main library
+# 生成静态库 MathFunctions
 add_library(MathFunctions
             mysqrt.cxx
             ${CMAKE_CURRENT_BINARY_DIR}/Table.h
@@ -20,8 +23,8 @@ add_library(MathFunctions
 # TutorialConfig.h include is an implementation detail
 # state that we depend on our binary dir to find Table.h
 target_include_directories(MathFunctions
-          INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
-          PRIVATE ${CMAKE_CURRENT_BINARY_DIR}
+          INTERFACE ${CMAKE_CURRENT_SOURCE_DIR} # MathFunctions.h 目录
+          PRIVATE ${CMAKE_CURRENT_BINARY_DIR} # Table.h 文件所在位置
           )
 
 # install rules
