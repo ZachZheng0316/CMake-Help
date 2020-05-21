@@ -66,9 +66,9 @@ do_test(Tutorial -25 "-25 is [-nan|nan|0]")
 do_test(Tutorial 0.0001 "0.0001 is 0.01")
 
 # setup installer
-# 启动构建安装程序
-include(InstallRequiredSystemLibraries)
-set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
-set(CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
-set(CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
-include(CPack)
+# 鏋勫缓瀹夎绋嬪簭
+include(InstallRequiredSystemLibraries) # 鍖呮嫭椤圭洰褰撳墠骞冲彴鎵�闇�鐨勪换浣曡繍琛屽簱
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt") # 璁剧疆Lisence 浣嶇疆
+set(CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}") # 璁剧疆涓荤増鏈彿
+set(CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}") # 璁剧疆鍓増鏈彿
+include(CPack) # 鍖呭惈妯″潡 CPack
