@@ -53,6 +53,8 @@ target_link_libraries(MathFunctions PUBLIC tutorial_compiler_flags)
 target_compile_definitions(MathFunctions PRIVATE "EXPORTING_MYMATH")
 
 # install rules
+# 把库 MathFunctions 安装到 <prefix>/lib/
+# 并产生 CMake 文件: MathFunctionsTargets.cmake
 install(TARGETS MathFunctions tutorial_compiler_flags
         DESTINATION lib
         EXPORT MathFunctionsTargets)
